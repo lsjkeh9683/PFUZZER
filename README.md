@@ -9,13 +9,16 @@ Environment : python
 
 # Command Options
 **Required Options**
-  - `python PFUZZER.py` : Run a script in command line
+  - `python PFUZZER.py` : Specifies the URL for purging, where the string "PFUZZ" is replaced by a purging value.
   - `-u [TargetUrl]` : Enter the target url for fuzzing.
   - `-type [num | txtFile]` : Select the type you want to fuzzy.
 
 **If the type is a number**
-  - `-start [value]` : Enter a number to start with.
+  - `-start [value]` : Start number for num fuzzing.
+  - `-step [value]` : Step for num fuzzing.
+  - `-end [value]` : End number for num fuzzing.
 
 **Examples of Commands**
-  - `PortScanner.exe -targetIp 127.0.0.1 -port 1 5000 -save check.txt`
+  - `python PFUZZER.py -u http://example.com/PFUZZ -type num -start 1 -step 1 -end 100`
+  - `python PFUZZER.py -u http://example.com/PFUZZ -type words.txt`
     
